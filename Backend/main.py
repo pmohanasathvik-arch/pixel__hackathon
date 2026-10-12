@@ -10,13 +10,15 @@ import urllib.request, urllib.error
 
 
 ROOT = Path(__file__).resolve().parent
-DB_PATH = Path(os.getenv('PSYNS_DB_PATH', str(ROOT / 'psyns.sqlite3')))
+
+DB_PATH = Path(os.getenv('PSYNS_DB_PATH', '/tmp/psyns.sqlite3'))
+
 UPLOAD_DIR = Path(os.getenv('PSYNS_UPLOAD_DIR', '/tmp/private_uploads'))
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 SECRET = os.getenv('PSYNS_TOKEN_SECRET', 'CHANGE_THIS_DEMO_SECRET_BEFORE_DEPLOYMENT')
 MAX_FILE_BYTES = 10 * 1024 * 1024
-ALLOWED_EXTS = {'.pdf', '.docx'}
+ALLOWED_EXTS = {'.pdf', '.docx'}    
 
 app = FastAPI(title='PSYNS API', version='1.1.0')
 app.add_middleware(CORSMiddleware, allow_origins=[
