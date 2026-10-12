@@ -1,1 +1,0 @@
-# pixel__hackathon
