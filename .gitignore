@@ -1,0 +1,13 @@
+
+# Frontend dependencies and build output
+Frontend/PSYNS-Platform/node_modules/
+Frontend/PSYNS-Platform/dist/
+
+# Backend private data
+Backend/private_uploads/
+Backend/__pycache__/
+Backend/*.sqlite3
+
+# Secrets
+.env
+Backend/.env
